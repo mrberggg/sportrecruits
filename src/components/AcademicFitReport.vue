@@ -1,39 +1,14 @@
 <template>
   <div v-if="athlete">
-    <div class="info">
-      <h2>{{ athlete.name }}</h2>
-      <ul>
-        <li>
-          <label>Sport:</label>
-          {{ athlete.sport }}
-        </li>
-        <li>
-          <label>Class:</label>
-          {{ athlete.grad_year }}
-        </li>
-        <li>
-          <label>Club:</label>
-          {{ athlete.club.name }}
-        </li>
-        <li>
-          <label>High School:</label>
-          {{ athlete.high_school.name }}
-        </li>
-        <li>
-          <label>GPA:</label>
-          {{ athlete.gpa }}
-        </li>
-        <li>
-          <label>Desired Major:</label>
-          {{ athlete.major }}
-        </li>
-      </ul>
-    </div>
+    <Header :athlete="athlete" />
+    <ReportTable :athlete="athlete" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from "vue";
+import Header from "./Header.vue";
+import ReportTable from "./ReportTable.vue";
 
 defineProps({
   athlete: {

@@ -8,5 +8,7 @@
 import AcademicFitReport from "@/components/AcademicFitReport.vue";
 import AthleteData from "@/assets/data.json";
 
+console.log({ AthleteData });
+
 const athlete = AthleteData.data[0];
 </script>
