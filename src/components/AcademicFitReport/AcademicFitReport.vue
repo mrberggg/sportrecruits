@@ -1,14 +1,14 @@
 <template>
-  <div v-if="athlete">
-    <Header :athlete="athlete" />
+  <v-container v-if="athlete">
+    <ReportHeader :athlete="athlete" />
     <ReportTable :athlete="athlete" />
-  </div>
+  </v-container>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from "vue";
-import Header from "./Header.vue";
 import ReportTable from "./ReportTable.vue";
+import ReportHeader from "./ReportHeader.vue";
 
 defineProps({
   athlete: {

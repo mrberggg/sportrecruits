@@ -1,12 +1,12 @@
 <template>
   <div v-if="athlete">
-    <div v-for="el in athlete.report" :key="el.school">
+    <!-- <div v-for="el in athlete.report" :key="el.school">
       {{ el.school }}
       <SchoolGpa
         :school-gpa-average="el.gpa['50%']"
         :student-gpa="athlete.gpa"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
