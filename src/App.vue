@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import AcademicFitReport from "@/components/AcademicFitReport.vue";
 import AthleteData from "@/assets/data.json";
 
@@ -13,7 +13,7 @@ export default {
   components: {
     AcademicFitReport
   },
-  data: function() {
+  setup() {
     return {
       athlete_info: AthleteData.data[0]
     };
