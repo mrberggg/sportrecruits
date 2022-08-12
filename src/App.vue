@@ -1,22 +1,12 @@
 <template>
   <div class="container">
-    <AcademicFitReport :athlete="athlete_info"/>
+    <AcademicFitReport :athlete="athlete" />
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import AcademicFitReport from "@/components/AcademicFitReport.vue";
 import AthleteData from "@/assets/data.json";
 
-export default {
-  name: "app",
-  components: {
-    AcademicFitReport
-  },
-  setup() {
-    return {
-      athlete_info: AthleteData.data[0]
-    };
-  }
-};
+const athlete = AthleteData.data[0];
 </script>
