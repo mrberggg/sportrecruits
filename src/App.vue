@@ -1,5 +1,5 @@
 <template>
-  <v-app class="border-top">
+  <v-app class="page-container">
     <v-main>
       <AcademicFitReport :athlete="athlete" />
     </v-main>
@@ -10,13 +10,12 @@
 import AthleteData from "@/assets/data.json";
 import AcademicFitReport from "./components/AcademicFitReport/AcademicFitReport.vue";
 
-console.log({ AthleteData });
-
 const athlete = AthleteData.data[0];
 </script>
 
 <style scoped>
-.border-top {
+.page-container {
+  border-bottom: 9px solid #00b4ff;
   border-top: 9px solid #00b4ff;
 }
 </style>
