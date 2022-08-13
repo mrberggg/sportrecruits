@@ -1,8 +1,6 @@
 <template>
   <v-row v-if="athlete" class="report-header">
-    <v-avatar>
-      <v-img src="/maria-carter.png" />
-    </v-avatar>
+    <report-header-avatar :athlete="athlete"></report-header-avatar>
     <v-col sm="12" md="6" class="details">
       <h1>{{ athlete.name }}</h1>
       <v-row>
@@ -46,6 +44,7 @@
 
 <script setup lang="ts">
 import { defineProps } from "vue";
+import ReportHeaderAvatar from "./ReportHeaderAvatar.vue";
 
 defineProps({
   athlete: {
