@@ -1,10 +1,12 @@
 <template>
   <v-row v-if="athlete" class="report-header">
-    <report-header-avatar :athlete="athlete"></report-header-avatar>
-    <v-col sm="12" md="6" class="details">
+    <div class="avatar">
+      <report-header-avatar :athlete="athlete"></report-header-avatar>
+    </div>
+    <v-col class="details">
       <h1>{{ athlete.name }}</h1>
-      <v-row>
-        <v-col sm="12" md="5">
+      <v-row class="detail-columns">
+        <v-col>
           <p>
             <label>Sport:</label>
             {{ athlete.sport }}
@@ -18,7 +20,7 @@
             {{ athlete.club.name }}
           </p>
         </v-col>
-        <v-col sm="12" md="7">
+        <v-col>
           <div>
             <label>High School:</label>
             {{ athlete.high_school.name }}
@@ -35,7 +37,7 @@
       </v-row>
     </v-col>
     <v-spacer></v-spacer>
-    <v-col sm="12" md="3">
+    <v-col class="header">
       <v-img src="/sr-insights.png" max-height="55px" />
       <div class="sub-header">Academic Fit Report</div>
     </v-col>
@@ -55,8 +57,6 @@ defineProps({
 </script>
 
 <style scoped>
-/* largest built-in size isn't big enough for us so overriding avatar size here */
-
 .report-header {
   font-size: 14px;
   margin: 40px 0;
@@ -77,5 +77,27 @@ label {
 .sub-header {
   text-align: right;
   padding-right: 43px;
+}
+@media (max-width: 768px) {
+  .report-header {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .avatar,
+  .details,
+  .header {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  .detail-columns {
+    padding: 0 25px;
+    text-align: left;
+  }
+  .sub-header {
+    text-align: center;
+    padding-right: 0;
+    margin-top: 10px;
+  }
 }
 </style>

@@ -22,8 +22,9 @@
 
 <style scoped>
 .footer {
-  position: absolute;
   bottom: 0;
+  position: absolute;
+  padding: 30px 20px 10px;
 }
 .items p {
   font-size: 14px;
